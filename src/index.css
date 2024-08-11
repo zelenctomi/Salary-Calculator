@@ -1,0 +1,323 @@
+/* Outfit font */
+/* font-weights: 400, 500, 600, 700 */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+html {
+    font-family: 'Outfit', system-ui, sans-serif;
+
+    /* Colors */
+    --black: #252525;
+    --dark-grey: #787c84;
+    --mid-grey: #ccc;
+    --grey: #eef1f3;
+    --white: #ffffff;
+    --green: #40ee66;
+    --red: #ff2b2b;
+    --blue: #2196F3;
+
+    /* Paddings */
+    --buttonXPadding: .5rem;
+    --buttonYPadding: .3rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col-start {
+  align-items: start;
+}
+
+.row-start {
+  justify-content: start;
+}
+
+.col-center {
+  align-items: center;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+.gap-02 { gap: .2rem; }
+.gap-05 { gap: .5rem; }
+.gap-1 { gap: 1rem; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  font-size: .9rem;
+  color: var(--dark-grey);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Main Container */
+
+.card {
+  position: relative;
+  background: var(--grey);
+  border-radius: 5px;
+  padding: 1rem;
+  gap: 1rem;
+  width: 33rem;
+  max-width: 90%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.buttonPadding {
+  padding: var(--buttonYPadding) 0;
+}
+
+/* Family Member Tabs */
+
+#familyMembers {
+  background: var(--grey);
+  border-radius: 7px;
+  padding: var(--buttonYPadding);
+  gap: .3rem;
+}
+
+input[type="radio"], input[type="submit"], input[type="text"], button{ /* reset styles */
+  appearance: none;
+  border: none;
+  background: none;
+}
+input[type="radio"] { display: none; }
+
+.custom-radio {
+  display: flex;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: var(--buttonYPadding) var(--buttonXPadding);
+  transition: background .2s;
+}
+
+.radio-text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--black);
+}
+
+input[type="radio"]:checked + .custom-radio { background: var(--white); }
+
+#addNewMember {
+  background: var(--grey);
+  border-radius: 7px;
+  padding: var(--buttonYPadding) var(--buttonXPadding);
+  font-size: 1rem;
+}
+
+/* Input Fields */
+
+input[type="text"] {
+  width: 20rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  padding: var(--buttonYPadding) var(--buttonXPadding);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--black);
+  background: var(--white);
+}
+
+input[type="text"]::placeholder {
+  color: var(--mid-grey)
+}
+
+/* Range */
+
+
+
+/* Buttons */
+
+button {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: .9rem;
+  font-weight: 400;
+  padding: var(--buttonYPadding) var(--buttonXPadding);
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.percentage {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
+#saveDate {
+  font-size: 1rem;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 8px 12px;
+}
+
+/* Toggle */
+
+.switch { /* The box around the slider */
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 21px;
+}
+
+.switch input { /* Hide default HTML checkbox */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 17px;
+  background-color: var(--mid-grey);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+  background-color: var(--white);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--blue);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--blue);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+
+/* Dialog */
+
+#dateButton {
+  background: var(--black);
+  color: var(--white);
+}
+
+#popup-bg {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+dialog {
+  z-index: 10000;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30rem;
+  max-width: 85%;
+}
+
+dialog > *, dialog > * > * {
+  text-align: center;
+}
+
+#date {
+  border: 1px solid var(--mid-grey);
+}
+
+/* Eligibility */
+
+#eligibility {
+  color: var(--white);
+  border-radius: 5px;
+  padding: var(--buttonYPadding) var(--buttonXPadding);
+  font-size: .9rem;
+}
+
+.green {
+  background: var(--green);
+}
+
+.red {
+  background: var(--red);
+}
+
+/* Family */
+
+.child-counter {
+  font-size: .8rem;
+  color: var(--dark-grey);
+  width: .5rem;
+}
+
+.family-button {
+  background: var(--mid-grey);
+  font-size: .6rem;
+  font-weight: 700;
+  width: 17px;
+  aspect-ratio: 1/1;
+  padding: 0;
+  border-radius: 100px;
+}
+
+/* Table */
+
+.table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.th {
+  font-weight: 500;
+  border-bottom: 1px solid var(--mid-grey);
+}
+
+.td {
+  width: 10rem;
+  background: var(--white);
+  padding: 5px 10px;
+}
+
+.sum {
+  font-weight: 600;
+}
+
+/* Delete */
+
+#delete {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+}
